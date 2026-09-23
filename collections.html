@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-nz"> <!-- New Zealand English -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Search Engine Optimisation (SEO) metadata. -->
+    <meta name="description" content="My website description." />
+    <link rel="canonical" href="http://design.ac.nz/student/2024/your-name/final-project" />
+    <meta property="og:locale" content="en_NZ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="My Website." />
+    <meta property="og:description" content="My website description." />
+    <meta property="og:url" content="http://design.ac.nz/student/2024/your-name/final-project" />
+    <meta property="og:site_name" content="My Website." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="My website description." />
+    <meta name="twitter:title" content="My Website." />
+    <meta name="twitter:site" content="@YourName" />
+    <meta name="twitter:creator" content="@YourName" />
+    <script
+        type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","@id":"http://design.ac.nz/student/2024/your-name/final-project","url":"http://design.ac.nz/student/2024/your-name/final-project","name":"My Website.","potentialAction":{"@type":"SearchAction","target":"http://design.ac.nz/student/2024/your-name/final-project?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+    <script
+        type='application/ld+json'>{"@context":"https://schema.org","@type":"Organization","url":"http://design.ac.nz/student/2024/your-name/final-project","sameAs":["https://www.facebook.com/YourName/","https://www.instagram.com/YourName/","https://www.youtube.com/user/YourName","https://nz.pinterest.com/YourName/","https://twitter.com/YourName"],"@id":"http://design.ac.nz/student/2024/your-name/final-project#organization","name":"My Website. Limited","logo":"http://design.ac.nz/student/2024/your-name/final-project/images/logo.png"}</script>
+    <!-- / (SEO) metadata. -->
+
+    <!-- Google Fonts - Google Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts - Host Grotesk
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+     Google Fonts - Space Grotesk
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"> -->
+
+    <!-- Google Fonts - hamburger menu icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- Flickity Carousel CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Website Template</title>
+</head>
+
+<body>
+
+            <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+          HEADER AND NAVIGATION
+          Notes:
+          - need to attach old debrief website links into archive button
+          - ONLY create dummy pages!
+          - need to add logo to the left of navigtion links. Right align the navigation links.
+    
+        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+        <header>
+            <nav class="topnav" id="myTopnav">
+
+                <!-- Logo -->
+                <div>
+                    <img src="images/debrieflogo_nav.png" alt="DEBRIEF logo" class="navlogo">
+                </div>
+
+                <a href="index.html">Home</a>
+
+                <!-- All Graduates -->
+                <div class="dropdown">
+                    <div class="dropdown-title">
+                        <a href="graduates.html" class="dropbtn">All Graduates</a>
+                        <button type="button" class="dropdown-toggle" onclick="toggleDropdown(this)" aria-label="Toggle All Graduates submenu">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+
+                    <div class="dropdown-content">
+                        <a href="students-communication.html">Communication Design</a>
+                        <a href="students-fashion.html">Fashion Design</a>
+                        <a href="students-product.html">Product Design</a>
+                        <a href="students-postgraduate.html">Postgraduate Design</a>
+                    </div>
+                </div>
+
+                <!-- School of Design -->
+                <div class="dropdown">
+                    <div class="dropdown-title">
+                        <a href="school-of-design.html" class="dropbtn">School of Design</a>
+                        <button type="button" class="dropdown-toggle" onclick="toggleDropdown(this)" aria-label="Toggle School of Design submenu">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+
+                    <div class="dropdown-content">
+                        <a href="about-communication.html">About Communication Design</a>
+                        <a href="about-fashion.html">About Fashion Design</a>
+                        <a href="about-product.html">About Product Design</a>
+                        <a href="about-postgraduate.html">About Postgraduate Design</a>
+                    </div>
+                </div>
+
+                <!-- Events -->
+                <div class="dropdown">
+                    <div class="dropdown-title">
+                        <a href="events.html" class="dropbtn">Events</a>
+                        <button type="button" class="dropdown-toggle" onclick="toggleDropdown(this)" aria-label="Toggle Events submenu">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+
+                    <div class="dropdown-content">
+                        <a href="debrief.html">DEBRIEF: Student Exhibition</a>
+                        <a href="collections.html">COLLECTIONS: Fashion Show</a>
+                    </div>
+                </div>
+
+                <!-- Archive -->
+                <div class="dropdown">
+                    <div class="dropdown-title">
+                        <a href="archive.html" class="dropbtn">Archive</a>
+                        <button type="button" class="dropdown-toggle" onclick="toggleDropdown(this)" aria-label="Toggle Archive submenu">
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+
+                    <div class="dropdown-content">
+                        <a href="https://design.ac.nz/debrief/2025/" target="_blank">2025</a>
+                        <a href="https://design.ac.nz/debrief/2024/" target="_blank">2024</a>
+                        <a href="https://design.ac.nz/graduate/2023/" target="_blank">2023</a>
+                        <a href="https://design.ac.nz/graduate/2022/" target="_blank">2022</a>
+                        <a href="https://design.ac.nz/graduate/2021/" target="_blank">2021</a>
+                        <a href="https://design.ac.nz/graduate/2020/" target="_blank">2020</a>
+                        <a href="https://design.ac.nz/graduate/2019/" target="_blank">2019</a>
+                        <a href="https://design.ac.nz/graduate/2018/" target="_blank">2018</a>
+                        <a href="https://design.ac.nz/graduate/2017/" target="_blank">2017</a>
+                        <a href="https://design.ac.nz/graduate/2016/" target="_blank">2016</a>
+                        <a href="https://design.ac.nz/graduate/2015/" target="_blank">2015</a>
+                        <a href="https://design.ac.nz/graduate/2014/" target="_blank">2014</a>
+                        <a href="https://design.ac.nz/graduate/2013/" target="_blank">2013</a>
+                        <a href="https://design.ac.nz/graduate/2012/" target="_blank">2012</a>
+                        <a href="https://design.ac.nz/graduate/2011/" target="_blank">2011</a>
+                        <a href="https://design.ac.nz/graduate/2010/" target="_blank">2010</a>
+                    </div>
+                </div>
+
+            </nav>
+            
+
+            <!-- Hamburger -->
+            <button type="button" class="icon" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="myTopnav">
+                <span class="material-symbols-outlined" id="menuIcon">menu</span>
+            </button>
+        </header>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById("myTopnav");
+            var button = document.getElementById("menuToggle");
+            var icon = document.getElementById("menuIcon");
+
+            if (nav.className === "topnav") {
+                nav.className += " responsive";
+                icon.textContent = "close";
+                button.setAttribute("aria-expanded", "true");
+            } else {
+                nav.className = "topnav";
+                icon.textContent = "menu";
+                button.setAttribute("aria-expanded", "false");
+            }
+        }
+
+        function toggleDropdown(button) {
+            if (window.innerWidth <= 1170) {
+                var dropdown = button.closest(".dropdown");
+                dropdown.classList.toggle("open");
+            }
+        }
+    </script>
+
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+          LOOPING ANIMATION
+    
+        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+        <section class="looping-animation">
+            <img src="images/DEBRIEFlogo_Screen.png" alt="All Design Graduates" class="title-image">
+        </section>
+
+        <section class="debrief-dates">
+            <h2 class="debrief-dates-title">
+                COLLECTIONS <br class="desktop-break"> Fashion Graduate Runway Show
+            </h2>
+            <p> 
+                Doors Open 5:30pm Fri 20 Nov <span class="mobile-break"><br></span> Show Starts 7:00pm <br> Otago Polytechnic, The Hub
+            </p>
+        </section>
+
+    <main> <!-- Main content area is set to 100% width -->
+
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+          DESCRIPTION OF DEBRIEF
+    
+        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+        <article class="single-item">
+            <h2 class="single-item__h2">School of Design Graduate Exhibition!</h2>
+
+            <p class="single-item__introduction">DEBRIEF is the annual exhibition of final-year students from the School of Design at Otago Polytechnic. It showcases the creative talents and innovative projects of our graduating students across various design disciplines, including Communication Design, Fashion Design, Product Design, and Postgraduate Design. Each project reflects the students' dedication, creativity, and the skills they have honed during their time at Otago Polytechnic. We invite you to immerse yourself in the world of design and witness the future of creativity. Enjoy the exhibition and discover the next generation of design talent!</p>
+
+            <img src="images/square_placeholder.jpg" alt="DEBRIEF exhibition image" class="single-item__image">
+        </article>
+
+        <section class="collections-OP-video">
+            <h2>
+                New Zealand Fashion Week 2026 | Graduates Collections
+            </h2>
+
+            <div class="youtube-video">
+                <iframe
+                    id="walkthrough-video"
+                    src="https://www.youtube.com/embed/FX4dPj4fS08"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+    </main> <!-- End of main content area -->
+
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+          FOOTER
+    
+        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+        <footer>
+            <div class="footer-grid">
+
+                <article class="footer__image">
+                    <img src="images/debrieflogo_portrait.png" alt="DEBRIEF logo" class="footer__image__logo">
+                </article>
+
+                <article class="footer__menu">
+                    <h2>
+                        Events
+                    </h2>
+                    <ul class="footer__menu__list">
+                        <li><a href="debrief.html">DEBRIEF: Graduate Exhibition</a></li>
+                        <li><a href="collections.html">COLLECTIONS: Fashion Show</a></li>
+                    </ul>
+
+                    <div class="footer__copyright-details">
+                        <p>All images are in the public domain.<br>Copyright Maxis Angel &copy; 2026.</p>
+                        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span
+                        property="dct:title">This website</span> by <span property="cc:attributionName">Maxis Angel</span></p>
+                    </div>
+
+                </article>
+
+                <article class="footer__menu">
+                    <h2>
+                        Graduates
+                    </h2>
+                    <ul class="footer__menu__list">
+                        <li><a href="students-communication.html">Communication Design</a></li>
+                        <li><a href="students-fashion.html">Fashion Design</a></li>
+                        <li><a href="students-product.html">Product Design</a></li>
+                        <li><a href="students-postgraduate.html">Postgraduate Design</a></li>
+                    </ul>
+                </article>
+
+                <article class="footer__menu">
+                    <h2>
+                        Social links
+                    </h2>
+                    <ul class="footer__menu__list">
+                        <li><a href="https://www.op.ac.nz/schools/school-of-design" target="_blank"><i class="fa-solid fa-globe"></i> School of Design</a></li>
+                        <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> School of Design</a></li>
+                        <li><a href="https://www.instagram.com/otagopolydesign/" target="_blank"><i class="fa-brands fa-instagram"></i> School of Design</a></li>
+                        <li><a href="https://www.instagram.com/otagopolycommunication/" target="_blank"><i class="fa-brands fa-instagram"></i> Communication Design</a></li>
+                        <li><a href="https://www.instagram.com/otagopolyfashion/" target="_blank"><i class="fa-brands fa-instagram"></i> Fashion Design</a></li>
+                        <li><a href="https://www.instagram.com/otagopolyproduct/" target="_blank"><i class="fa-brands fa-instagram"></i> Product Design</a></li>
+                    </ul>
+                </article>
+
+            </div>
+
+
+            <!-- <p>
+                Copyright Your Name &copy; 2024. Copyright material on this website is protected by copyright owned by
+                Your Name Here. Unless indicated otherwise for specific items or collections of content (either below or
+                within specific items or collections), this copyright material is licensed for re-use under the Creative
+                Commons Attribution / Share-Alike (CC BY-SA 4.0) International licence. In essence, you are free to
+                copy, distribute and adapt the material, as long as you attribute it to me and abide by the other
+                licence terms. Please note that this licence does not apply to any logos, design, images, photography,
+                drawing, animation, emblems and trade marks on the website or to the website’s design elements, or to
+                any other photography and imagery embedded in the website or used in the background. Those specific
+                items may not be re-used without express permission from the website owner.
+            </p> -->
+
+        </footer>
+    </body>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375.15 397.86">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #60c8d6;
+      }
+
+      .cls-2 {
+        fill: #8dc63f;
+      }
+
+      .cls-3 {
+        fill: #ef4237;
+      }
+
+      .cls-4 {
+        fill: #9c3e97;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <circle class="cls-2" cx="268.53" cy="296.87" r="84.64"/>
+      <rect class="cls-4" x="45.69" y="223.91" width="91.03" height="173.94"/>
+      <polygon class="cls-3" points="213.38 7.52 375.15 96.13 213.38 184.74 213.38 7.52"/>
+      <rect class="cls-1" x="26.83" y="26.83" width="129.53" height="129.53" transform="translate(-37.94 91.59) rotate(-45)"/>
+    </g>
+  </g>
+</svg>
