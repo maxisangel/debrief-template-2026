@@ -69,7 +69,7 @@ p {
     line-height: 1.5;
     font-weight: 400; /* 400 is normal, 500 is medium, 600 is semi-bold, 700 is bold, */
     font-family: "Google Sans", sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 h3 {
@@ -341,36 +341,145 @@ header h1 {
     .topnav.responsive .dropdown-toggle .material-symbols-outlined {
         display: block;
         font-size: 1.5rem;
+        transition: transform 0.5s ease;
     }
 
-    .topnav.responsive .dropdown-content {
-        display: none;
-        position: static;
-        min-width: 0;
-        max-height: none;
-        overflow: visible;
-        box-shadow: none;
-        border-radius: 0;
-        padding: 0.25rem 0 0.5rem 1rem;
-        background-color: transparent;
-    }
 
-    .topnav.responsive .dropdown:hover .dropdown-content {
-        display: none;
-    }
+/* ROTATE ARROW WHEN OPEN */
+
+.topnav.responsive .dropdown.open .dropdown-toggle .material-symbols-outlined {
+    transform: rotate(180deg);
+}
+
+.topnav.responsive .dropdown-content {
+    display: block;
+    position: static;
+    min-width: 0;
+
+    max-height: 0;
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0 0 0 1rem;
+
+    background-color: transparent;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        padding 0.4s ease;
+}
+
+
+    /* OPEN DROPDOWN */
 
     .topnav.responsive .dropdown.open .dropdown-content {
-        display: block;
+        max-height: 500px;
+
+        opacity: 1;
+        pointer-events: auto;
+
+        padding: 0.25rem 0 0.5rem 1rem;
     }
+
+
+    /* DROPDOWN LINKS */
 
     .topnav.responsive .dropdown-content a {
         display: block;
+
         padding: 0.4rem 0;
+
         font-size: 1rem;
         text-align: right;
+
+        opacity: 0;
+        transform: translateY(-8px);
+
+        transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
+    }
+
+
+    /* OPEN LINK ANIMATION */
+
+    .topnav.responsive .dropdown.open .dropdown-content a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+    /* STAGGER LINKS */
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(6) {
+        transition-delay: 0.6s;
+    }
+
+        .topnav.responsive .dropdown.open .dropdown-content a:nth-child(7) {
+        transition-delay: 0.7s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(8) {
+        transition-delay: 0.8s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(9) {
+        transition-delay: 0.9s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(10) {
+        transition-delay: 1.0s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(11) {
+        transition-delay: 1.1s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(12) {
+        transition-delay: 1.2s;
+    }
+
+        .topnav.responsive .dropdown.open .dropdown-content a:nth-child(13) {
+        transition-delay: 1.3s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(14) {
+        transition-delay: 1.4s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(15) {
+        transition-delay: 1.5s;
+    }
+
+    .topnav.responsive .dropdown.open .dropdown-content a:nth-child(16) {
+        transition-delay: 1.6s;
     }
 }
-
 
 /* Second breakpoint */
 
@@ -438,10 +547,14 @@ header h1 {
   
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
+.carousel-section {
+    padding: 6rem 0rem;
+}
+
 .carousel-section .caption {
     background: var(--slide-out-menu-background);
     margin: 0;
-    padding: 10px;
+    padding: 2rem 0rem;
     text-align: center;
     color: var(--description-text-colour);
     font-size: .8rem;
@@ -452,148 +565,277 @@ header h1 {
 
 .carousel-cell {
     width: 100%;
+    opacity: 0;
+    filter: blur(8px);
+    transition:
+        opacity 0.7s ease,
+        filter 0.7s ease;
 }
+
+.carousel-cell.is-selected {
+    opacity: 1;
+    filter: blur(0);
+}
+
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
   
-    007.  PORTRAIT LAYOUT - for a grid of portrait format images
+    00.     DISCIPLINE EXPLORE (NARROW)
+            The title & button
   
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
-/* This sets the grid layout for the page. */
-@supports (display: grid) {
-    .portrait__grid {
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        gap: 2rem;
-        margin: 2rem;
+
+.discipline-explore {
+    background-color: var(--footer-background);
+    color: var(--black-text);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    /* This makes the CONTENT line up with main's 4rem padding */
+    padding: 6rem 10rem;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1500px) {
+    .discipline-explore {
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
 
-@media (max-width: 900px) {
-        .portrait__grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem;
-            display: grid;
-        }
+@media screen and (max-width: 600px) {
+    .discipline-explore {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
+}
 
-/* This 'portrait' class is a container for the text and images */
-.portrait {
-    text-align: center;
-    background-color: var(--portrait-background);
-    border-radius: .4rem;
-    padding: 2rem 2rem 1.4rem 2rem;
-    transition: box-shadow .3s;
+/* =================================
+   DISCIPLINE TITLE + ARROW
+   ALWAYS CLICKABLE
+================================= */
+
+.discipline-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 0;
+    border: none;
+    background: none;
+
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Explore the Disciplines title — never underlined */
+
+.discipline-toggle h2 {
     text-decoration: none;
-    color: var(--dark-text);
 }
 
-.portrait:hover {
-    box-shadow: rgba(50, 50, 93, 0.5) 0px 13px 27px -5px, rgba(0, 0, 0, 0.5) 0px 8px 16px -8px;
+
+/* Discipline names — underline on hover */
+
+.discipline,
+.discipline .discipline__name {
+    text-decoration: none !important;
+    font-weight: 400 !important;
+    font-size: 1.2rem !important;
 }
 
-.portrait__image {
-    width: 100%;
+.discipline .discipline__name:hover {
+    text-decoration: underline !important;
 }
 
-.portrait__name {
-    color: var(--dark-text);
-    font-weight: 400;
-    margin-top: .8rem;
-    margin-bottom: .4rem;
+/* Arrow */
+
+.discipline-arrow {
+    flex-shrink: 0;
+
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    border-right: 5px solid var(--orange-text);
+    border-bottom: 5px solid var(--orange-text);
+
+    transform: rotate(45deg);
+    transition: transform 0.5s ease;
 }
 
-.portrait__description {
-    color: var(--dark-text);
-    font-weight: 400;
-    font-size: .7rem;
-    margin-bottom: 1rem;
+.discipline-toggle.open .discipline-arrow {
+    transform: rotate(225deg);
 }
 
-/* *********************
-    Discipline Grid - REGULAR
-********************* */
+/* =================================
+       DESKTOP — 4 boxes in one row
+    ================================= */
 
-/* This sets the grid layout for the page. */
 @supports (display: grid) {
-    .discipline__grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 2rem;
-        margin: 2rem;
-    }
+
+/* =================================
+   DISCIPLINE DROPDOWN ANIMATION
+================================= */
+
+.discipline__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        margin 0.4s ease;
+}
+
+.discipline__grid.open {
+    max-height: 1000px;
+    margin: 2rem 0;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 
-/* Tablet / mobile */
-@media (max-width: 1170px) {
-    .discipline__grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin: 2rem;
-    }
 
+/* INDIVIDUAL DISCIPLINE ANIMATION */
+
+.discipline__grid.open .discipline {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+    /* Image + name side-by-side inside each box */
     .discipline {
         display: grid;
         grid-template-columns: 1fr 2fr;
         align-items: center;
-        gap: 1.5rem;
-        text-align: left;
-    }
-
-    .discipline__image {
-        max-height: 150px;
-        width: auto;
-    }
-
-    .discipline__name {
-        margin: 0;
-    }
-}
-
-@media (max-width: 520px) {
-    .discipline__grid {
-        grid-template-columns: 1fr;
         gap: 1rem;
-        margin: 2rem;
-    }
+        border-radius: .4rem;
+        color: var(--black-text);
+        padding: 1rem 2rem;
 
-    .discipline {
-        grid-template-columns: 1fr;
-        text-align: center;
+         opacity: 0;
+        transform: translateY(-8px);
+
+        transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
     }
 
     .discipline__image {
-        width: 100%;
-        height: auto;
+        width: 50px;
+        height: 50px;
         object-fit: contain;
         display: block;
-        margin: 0 auto;
     }
 
-    .discipline__name {
+    .discipline .discipline__name {
+        color: var(--black-text);
+        font-weight: 500;
+        font-size: 1.5rem;
         margin-top: .8rem;
         margin-bottom: .4rem;
     }
 }
 
 
-/* This 'discipline' class is a container for the text and images */
-.discipline {
-    text-align: center;
-    border-radius: .4rem;
-    padding: 2rem 2rem 1.4rem 2rem;
-    transition: box-shadow .3s;
-    text-decoration: none;
-    color: var(--dark-text);
-    min-width: 0;
-    box-sizing: border-box;
+.discipline__grid.open .discipline:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.discipline__grid.open .discipline:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.discipline__grid.open .discipline:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.discipline__grid.open .discipline:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+/* =================================
+   BELOW 1600px
+   Single-column dropdown
+================================= */
+
+@media (max-width: 1300px) {
+
+    .discipline__grid.open {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        margin: 1rem 0 2rem;
+        width: 100%;
+    }
+
+    .discipline {
+        min-width: 0;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    .discipline__image {
+        max-width: 50px;
+        max-height: 50px;
+        width: auto;
+        height: auto;
+    }
+
+    .discipline__name {
+        margin: 0;
+        min-width: 0;
+    }
 }
 
 
-/* The :nth-child targets each discipline box to allow them to be different colours */
+/* =================================
+   MOBILE — 520px AND BELOW
+================================= */
+
+@media (max-width: 745px) {
+
+    .discipline__grid.open {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 2rem 0;
+        width: 100%;
+    }
+
+    .discipline {
+        grid-template-columns: 1fr 2fr;
+        text-align: center;
+        min-width: 0;
+    }
+
+    .discipline__image {
+        width: 50px;
+        height: 50px;
+        max-width: 100%;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    .discipline__name {
+        margin-top: .8rem;
+        margin-bottom: .4rem;
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* =================================
+   DISCIPLINE COLOURS
+================================= */
+
 .discipline:nth-child(1) {
     background-color: var(--comms-green);
 }
@@ -611,252 +853,32 @@ header h1 {
 }
 
 
-.discipline:hover {
-    box-shadow: rgba(50, 50, 93, 0.5) 0px 13px 27px -5px,
-                rgba(0, 0, 0, 0.5) 0px 8px 16px -8px;
-}
-
-
-.discipline__name {
-    color: var(--dark-text);
-    font-weight: 400;
-    margin-top: .8rem;
-    margin-bottom: .4rem;
-}
-
-
-.discipline__description {
-    color: var(--dark-text);
-    font-weight: 400;
-    font-size: .7rem;
-    margin-bottom: 1rem;
-}
-
-/**********************
-    Discipline Grid - NARROW
-**********************/
-
-@supports (display: grid) {
-
-    /* =================================
-       DESKTOP — 4 boxes in one row
-    ================================= */
-
-    .discipline__grid__narrow {
-        display: none;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 2rem;
-        margin: 2rem;
-    }
-
-    /* Show grid when opened */
-    .discipline__grid__narrow.open {
-        display: grid;
-    }
-
-    /* Image + name side-by-side inside each box */
-    .discipline_narrow {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        align-items: center;
-        gap: 1rem;
-        border-radius: .4rem;
-        color: var(--black-text);
-        padding: 1rem 2rem;
-    }
-
-    .discipline__image_narrow {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .discipline_narrow .discipline__name_narrow {
-        color: var(--black-text);
-        font-weight: 500;
-        font-size: 1.5rem;
-        margin-top: .8rem;
-        margin-bottom: .4rem;
-    }
-}
-
-
-/* =================================
-   DISCIPLINE TITLE + ARROW
-   ALWAYS CLICKABLE
-================================= */
-
-.discipline-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: .6rem;
-
-    border: none;
-    background: none;
-    padding: 0;
-
-    font-family: inherit;
-    font-size: inherit;
-    text-align: left;
-
-    cursor: pointer;
-}
-
-
-/* Title */
-.discipline-toggle__title {
-    display: block;
-}
-
-
-/* Arrow */
-.discipline-arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: Arial, sans-serif;
-    font-size: 2rem;
-    font-weight: 900;
-    line-height: 1;
-
-    height: 1em;
-    width: 1em;
-
-    transform: translateY(-0.05em);
-
-    transition: transform .2s ease;
-}
-
-
-/* Open state */
-.discipline-toggle.open .discipline-arrow {
-    transform: translateY(-0.05em) rotate(180deg);
-}
-
-
-
-/* =================================
-   BELOW 1600px
-   Single-column dropdown
-================================= */
-
-@media (max-width: 1600px) {
-
-    .discipline__grid__narrow.open {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin: 1rem 2rem 2rem;
-    }
-
-    .discipline_narrow {
-        grid-template-columns: 1fr 2fr;
-        text-align: left;
-    }
-
-    .discipline__image_narrow {
-        max-height: 150px;
-        width: auto;
-    }
-
-    .discipline__name_narrow {
-        margin: 0;
-    }
-}
-
-
-/* =================================
-   MOBILE — 520px AND BELOW
-================================= */
-
-@media (max-width: 520px) {
-
-    .discipline__grid__narrow.open {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin: 2rem;
-    }
-
-    .discipline_narrow {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .discipline__image_narrow {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .discipline__name_narrow {
-        margin-top: .8rem;
-        margin-bottom: .4rem;
-    }
-}
-
-
-/* =================================
-   DISCIPLINE COLOURS
-================================= */
-
-.discipline_narrow:nth-child(1) {
-    background-color: var(--comms-green);
-}
-
-.discipline_narrow:nth-child(2) {
-    background-color: var(--fashion-blue);
-}
-
-.discipline_narrow:nth-child(3) {
-    background-color: var(--product-red);
-}
-
-.discipline_narrow:nth-child(4) {
-    background-color: var(--postgrad-purple);
-}
-
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
   
-    009.  MASONRY LAYOUT - for a mix of landscape and portrait format images
+    Project description (above masonry)
   
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
-.grid--masonry {
-    columns: 2;
-    column-gap: 4rem;
+.project-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding-bottom: 4rem;
+    padding-top: 15rem;
+    order: 1;
 }
 
-.grid--masonry > * {
-    width: 100%;
+.project-info__title {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.grid--masonry img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 4px;
-    margin-bottom: 4rem;
-    break-inside: avoid;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 1170px) {
-
-    .grid--masonry {
-        columns: 2;
-        column-gap: 2rem;
-    }
-}
-
-@media screen and (max-width: 600px) {
-
-    .grid--masonry {
-        columns: 1;
-        column-gap: 2rem;
-    }
+.project-info h2,
+.project-info h3,
+.project-info p {
+    margin: 0;
 }
 
 
@@ -868,7 +890,21 @@ header h1 {
 
 .project-content {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+/* DESKTOP — project info first, hero image underneath */
+
+.project-info {
+    order: 1;
+}
+
+.portfolio-hero-image {
+    order: 2;
+    padding: 4rem 0rem;
+}
+
 
 /* FULL WIDTH IMAGE */
 
@@ -900,7 +936,65 @@ header h1 {
     height: auto;
 }
 
+
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    HERO IMAGE 
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+    .portfolio-hero-image {
+        padding: 4rem 0rem;
+    }
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    009.  MASONRY LAYOUT - for a mix of landscape and portrait format images
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.grid--masonry {
+    columns: 2;
+    column-gap: 4rem;
+    order: 3;
+}
+
+.grid--masonry > * {
+    width: 100%;
+}
+
+.grid--masonry img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    margin-bottom: 4rem;
+    break-inside: avoid;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1170px) {
+
+    .grid--masonry {
+        columns: 2;
+        column-gap: 2rem;
+    }
+
+    .project-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        padding-top: 6rem;
+    }
+}
+
 @media screen and (max-width: 600px) {
+
+    .grid--masonry {
+        columns: 1;
+        column-gap: 2rem;
+    }
 
     .image-half {
         grid-template-columns: 1fr;
@@ -910,7 +1004,171 @@ header h1 {
         padding: 4rem 2rem;
     }
 
+    .portfolio-hero-image {
+        order: 1;
+        margin-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .project-info {
+        order: 2;
+        padding-top: 0rem;
+    }
 }
+
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    STUDENT INFORMATION SECTION (Individual Portfolio page)
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.student-info-sn {
+    padding: 15rem 0rem 8rem 0rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    row-gap: 0rem;
+}
+
+@media screen and (max-width: 765px) {
+    .student-info-sn {
+        grid-template-columns: 1fr;
+        margin-top: 5rem;
+    }
+
+    .student-info-sn {
+        grid-template-columns: 1fr;
+        padding: 4rem 0rem;
+    }
+}
+
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    TESTING OTHER - STUDENT NAME FIRST
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.project-info-sn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+    order: 1;
+}
+
+.project-info__title-sn {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-info-sn h2,
+.project-info-sn h3,
+.project-info-sn p {
+    margin: 0;
+}
+
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    Different image layout (Individual Project page)
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.project-content-sn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* DESKTOP — project info first, hero image underneath */
+
+.project-info-sn {
+    order: 1;
+}
+
+.portfolio-hero-image-sn {
+    order: 2;
+    padding: 0rem 0rem;
+}
+
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    HERO IMAGE 
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    009.  MASONRY LAYOUT - for a mix of landscape and portrait format images
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.grid--masonry-sn {
+    columns: 2;
+    column-gap: 4rem;
+    order: 3;
+    padding-bottom: 4rem;
+}
+
+.grid--masonry-sn > * {
+    width: 100%;
+}
+
+.grid--masonry-sn img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    margin-bottom: 4rem;
+    break-inside: avoid;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1170px) {
+
+    .grid--masonry-sn {
+        columns: 2;
+        column-gap: 2rem;
+    }
+
+    .project-info-sn {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        padding-top: 6rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .grid--masonry-sn {
+        columns: 1;
+        column-gap: 2rem;
+    }
+
+    .image-half-sn {
+        grid-template-columns: 1fr;
+    }
+
+    .project-text-sn {
+        padding: 4rem 2rem;
+    }
+
+    .portfolio-hero-image-sn {
+        margin-top: 4rem;
+    }
+
+    .project-info-sn {
+        padding-top: 0rem;
+    }
+}
+
 
 
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -1050,44 +1308,6 @@ header h1 {
 
 }
 
-
-/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-  
-    Project description (above masonry)
-  
-= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
-
-.project-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    padding-bottom: 4rem;
-    padding-top: 15rem;
-}
-
-.project-info__title {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.project-info h2,
-.project-info h3,
-.project-info p {
-    margin: 0;
-}
-
-@media screen and (max-width: 1170px) {
-
-    .project-info {
-        display: grid;
-        grid-template-columns: 1fr;
-        column-gap: 0;
-        padding-top: 6rem;
-    }
-}
-
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
   
     STUDENT INFORMATION SECTION (Individual Portfolio page)
@@ -1135,7 +1355,16 @@ header h1 {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem 3rem;
+    gap: 1rem 2rem;
+}
+
+.student-contacts a {
+    text-decoration: none;
+    color: var(--black-text);
+}
+
+.student-contacts a:hover {
+    text-decoration: underline;
 }
 
 .student-description {
@@ -1685,8 +1914,17 @@ footer h2 {
 }
 
 .footer__image__logo {
-    max-height: 300px;
+    max-width: 100%;
+    max-height: 500px;
     width: auto;
+    height: auto;
+    display: block;
+}
+
+.footer-grid article:first-child {
+    min-width: 0;
+    padding-right: 2rem;
+    box-sizing: border-box;
 }
 
 ul.footer__menu__list {
@@ -1736,7 +1974,6 @@ ul.footer__menu__list li a:hover {
     FOOTER MEDIA QUERIES
    ********************* */
 
-/* Max width 1120px or 70rem */
 @media screen and (max-width: 1120px) {
     .footer-grid {
         grid-template-columns: repeat(auto-fit, minmax(6.25rem, 1fr));
@@ -1751,58 +1988,9 @@ ul.footer__menu__list li a:hover {
     }
 }
 
-@media screen and (max-width: 877px) {
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "logo social"
-            "events graduates";
-        margin-bottom: 2rem;
-    }
-
-    .footer-grid article:nth-child(1) {
-        grid-area: logo;
-    }
-
-    .footer-grid article:nth-child(2) {
-        grid-area: events;
-    }
-
-    .footer-grid article:nth-child(4) {
-        grid-area: social;
-    }
-
-    .footer-grid article:nth-child(3) {
-        grid-area: graduates;
-    }
-
-    .footer__menu {
-        padding: 0;
-    }
-
-    footer p {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "logo"
-            "social"
-            "graduates"
-            "events";
-    }
-}
 
 /* *********************
-    FOOTER DROPDOWN
-   ********************* */
-
-/* *********************
-    FOOTER DROPDOWN
+    FOOTER DROPDOWN BASE
    ********************* */
 
 .footer__dropdown {
@@ -1821,6 +2009,7 @@ ul.footer__menu__list li a:hover {
 
 .footer__dropdown h2 {
     margin-bottom: 2rem;
+    font-size: 1.5rem;
 }
 
 .footer__arrow {
@@ -1828,30 +2017,72 @@ ul.footer__menu__list li a:hover {
 }
 
 
-@media screen and (max-width: 450px) {
+/* *********************
+    FOOTER — 877px
+   ********************* */
+
+@media screen and (max-width: 877px) {
+
+    /* FOOTER GRID */
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-areas:
+            "logo social"
+            "logo graduates"
+            "logo events";
+
+        gap: 0rem;
+    }
+
+    .footer__image__logo {
+        max-height: 300px;
+    }
+
+    .footer-grid article:nth-child(1) {
+        grid-area: logo;
+    }
+
+    .footer-grid article:nth-child(2) {
+        grid-area: events;
+    }
+
+    .footer-grid article:nth-child(3) {
+        grid-area: graduates;
+    }
+
+    .footer-grid article:nth-child(4) {
+        grid-area: social;
+    }
+
+
+    /* DROPDOWN */
 
     .footer__dropdown {
         cursor: pointer;
     }
 
     .footer__dropdown h2 {
-        margin-bottom: 0rem;
+        margin-bottom: 0;
     }
+
 
     /* ARROW */
 
     .footer__arrow {
         display: block;
 
-        width: 12px;
-        height: 12px;
+        width: 15px;
+        height: 15px;
 
-        border-right: 3px solid var(--orange-text);
-        border-bottom: 3px solid var(--orange-text);
+        border-right: 5px solid var(--orange-text);
+        border-bottom: 5px solid var(--orange-text);
 
         transform: rotate(45deg);
         transition: transform 0.5s ease;
     }
+
 
     /* LINKS */
 
@@ -1859,10 +2090,11 @@ ul.footer__menu__list li a:hover {
         max-height: 0;
         overflow: hidden;
         opacity: 0;
-
         pointer-events: none;
 
-        transition: max-height 0.4s ease;
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease;
     }
 
     .footer__menu.open .footer__menu__list {
@@ -1871,6 +2103,7 @@ ul.footer__menu__list li a:hover {
         pointer-events: auto;
     }
 
+
     /* INDIVIDUAL LINK ANIMATION */
 
     .footer__menu__list li {
@@ -1878,8 +2111,8 @@ ul.footer__menu__list li a:hover {
         transform: translateY(-8px);
 
         transition:
-            opacity 0.25s ease,
-            transform 0.25s ease;
+            opacity 0.5s ease,
+            transform 0.5s ease;
     }
 
     .footer__menu.open .footer__menu__list li {
@@ -1887,31 +2120,33 @@ ul.footer__menu__list li a:hover {
         transform: translateY(0);
     }
 
-    /* STAGGER EACH LINK */
+
+    /* STAGGER */
 
     .footer__menu.open .footer__menu__list li:nth-child(1) {
-        transition-delay: 0.05s;
-    }
-
-    .footer__menu.open .footer__menu__list li:nth-child(2) {
         transition-delay: 0.1s;
     }
 
-    .footer__menu.open .footer__menu__list li:nth-child(3) {
-        transition-delay: 0.15s;
-    }
-
-    .footer__menu.open .footer__menu__list li:nth-child(4) {
+    .footer__menu.open .footer__menu__list li:nth-child(2) {
         transition-delay: 0.2s;
     }
 
+    .footer__menu.open .footer__menu__list li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .footer__menu.open .footer__menu__list li:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
     .footer__menu.open .footer__menu__list li:nth-child(5) {
-        transition-delay: 0.25s;
+        transition-delay: 0.5s;
     }
 
     .footer__menu.open .footer__menu__list li:nth-child(6) {
-        transition-delay: 0.3s;
+        transition-delay: 0.6s;
     }
+
 
     /* ARROW ROTATION */
 
@@ -1919,6 +2154,43 @@ ul.footer__menu__list li a:hover {
         transform: rotate(225deg);
     }
 }
+
+
+/* *********************
+    FOOTER — 450px
+   ********************* */
+
+@media screen and (max-width: 450px) {
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "logo"
+            "social"
+            "graduates"
+            "events";
+
+        gap: 0;
+    }
+
+    .footer-grid article:nth-child(1) {
+        grid-area: logo;
+    }
+
+    .footer-grid article:nth-child(2) {
+        grid-area: events;
+    }
+
+    .footer-grid article:nth-child(3) {
+        grid-area: graduates;
+    }
+
+    .footer-grid article:nth-child(4) {
+        grid-area: social;
+    }
+}
+
 
 /* = = =   E N D   O F   T H E   C S S  = = = */
 
@@ -2010,10 +2282,6 @@ ul.footer__menu__list li a:hover {
   
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
-.discipline-OP-video {
-    padding: 10rem 0rem;
-}
-
 .discipline-OP-video h2 {
     color: var(--orange-text);
     padding-bottom: 2rem;
@@ -2035,8 +2303,9 @@ ul.footer__menu__list li a:hover {
 }
 
 .youtube-video {
+    aspect-ratio: 20 / 10;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    margin: 0 auto;
 }
 
 #walkthrough-video {
@@ -2048,12 +2317,11 @@ ul.footer__menu__list li a:hover {
 
 .coloured-block-section {
     background-color: var(--footer-background);
-    /* padding: 6rem; */
     color: var(--black-text);
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     /* This makes the CONTENT line up with main's 4rem padding */
-    padding: 5rem 10rem;
+    padding: 6rem 10rem;
     box-sizing: border-box;
 }
 
@@ -2120,6 +2388,16 @@ ul.footer__menu__list li a:hover {
     }
 }
 
+@media screen and (max-width: 600px) {
+
+    .image-block-title h1 {
+        width: 95%;
+        max-width: none;
+        text-align: center;
+    }
+
+}
+
 /* *********************
     Homescreen Looping Animation
 ********************* */
@@ -2172,6 +2450,51 @@ ul.footer__menu__list li a:hover {
     object-fit: cover;
     object-position: center;
     display: block;
+}
+
+
+.event-poster {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    min-height: calc(100vh - 118px);
+    padding: 6rem 0rem 2rem 0rem;
+}
+
+/* TEXT */
+
+.event-poster-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-poster-text h2,
+.event-poster-text h3,
+.event-poster-text p {
+    margin: 0;
+}
+
+.event-poster-text h2 {
+    color: var(--orange-text);
+}
+
+/* POSTER */
+
+.event-poster-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 118px);
+}
+
+.event-poster-image img {
+    max-width: 100%;
+    max-height: calc(100vh - 118px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 
@@ -2442,7 +2765,7 @@ ul.footer__menu__list li a:hover {
     .event-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 3rem 4rem;
+        gap: 2rem 10rem;
 
         width: min(95%, 70em);
         margin-inline: auto;
@@ -2475,7 +2798,7 @@ ul.footer__menu__list li a:hover {
         grid-column: 1 / -1;
 
         width: 100%;
-        aspect-ratio: 1 / 1;
+        height: 100%;
 
         object-fit: cover;
         display: block;

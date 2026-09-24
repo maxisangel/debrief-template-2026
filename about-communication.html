@@ -201,52 +201,23 @@
         }
     }
 
-      /* =================================
-       flckity carousel
-    ================================= */
+/* =================================
+   flickity carousel
+================================= */
 
-        document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
     var elem = document.querySelector(".main-carousel");
 
     var flkty = new Flickity(elem, {
         cellAlign: "left",
         contain: true,
-        wrapAround: true
+        wrapAround: true,
+        selectedAttraction: 0.005,
+        friction: 0.15
     });
 
 });
-
-    /* =================================
-       DISCIPLINE GRID TOGGLE
-       Works at ALL screen sizes
-    ================================= */
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-        var toggles = document.querySelectorAll(".discipline-toggle");
-
-        toggles.forEach(function (toggle) {
-
-            toggle.addEventListener("click", function () {
-
-                var grid = toggle.parentElement.querySelector(
-                    ".discipline__grid__narrow"
-                );
-
-                /* Toggle the arrow */
-                toggle.classList.toggle("open");
-
-                /* Toggle the discipline grid */
-                if (grid) {
-                    grid.classList.toggle("open");
-                }
-
-            });
-
-        });
-
-    });
 </script>
 
 
@@ -303,70 +274,65 @@
 
 </article>
 
-<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-  CAROUSEL – using Flickity carousel: https://flickity.metafizzy.co/
-    
-= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+        COLOURED BLOCK VIDEO
+            
+        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 
-<section class="carousel-section">
-    <article class="main-carousel">
-        <!-- Flickity Options: https://flickity.metafizzy.co/options -->
-        <div class="carousel-cell"><img src="images/landscape_placeholder.jpg"
-                alt="Overlooking New Chums Beach from Motutu Point - https://en.wikipedia.org/wiki/User:Pseudopanax">
-        </div>
-        <div class="carousel-cell"><img src="images/landscape_placeholder.jpg"
-                alt="New Chums Beach at Whangapoua, Waikato, New Zealand - https://www.flickr.com/people/97251982@N00">
-        </div>
-        <div class="carousel-cell"><img src="images/landscape_placeholder.jpg"
-                alt="Bream Bay, Ruakaka Beach - https://www.flickr.com/people/88123769@N02"></div>
+        <section class="coloured-block-section">
+            <article class="discipline-OP-video">
+                <h2>
+                        Design your Future | Communication Design
+                </h2>
+                <div class="youtube-video">
+                    <iframe
+                        id="walkthrough-video"
+                        src="https://www.youtube.com/embed/jjCxZdGHib4?si=5gXqy49PHF1BfMPu"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </article>
+        </section>
 
-        <div class="carousel-cell"><img src="images/landscape_placeholder.jpg"
-                alt="Totaranui Beach in Abel Tasman National Park - https://commons.wikimedia.org/wiki/User:Tournasol7">
-        </div>
-        <div class="carousel-cell"><img src="images/landscape_placeholder.jpg"
-                alt="Waipatiki Beach (Hastings District, Hawke's Bay, New Zealand) from the south; picture taken by Wilma Verburg, 2007/12/11 - https://commons.wikimedia.org/wiki/User:WJV%26DB">
-        </div>
-    </article>
-    <p class="caption">&nbsp;</p>
-</section>
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-<section> 
-    <p> 
-        words here about the projects in general possibly? or would this be unnessary. It depends on what and how much content the ehads of school want fpr te comms pages and other disicplines. words here about the projects in general possibly? or would this be unnessary. It depends on what and how much content the ehads of school want fpr te comms pages and other disicplines.  words here about the projects in general possibly? or would this be unnessary. It depends on what and how much content the ehads of school want fpr te comms pages and other disicplines. 
-    </p>
-</section>
+        CAROUSEL – using Flickity carousel: https://flickity.metafizzy.co/
+            
+        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 
-    <!-- <section class="discipline-OP-video">
-        <h2>
-            Design your Future | Communication Design https://www.youtube.com/watch?v=jjCxZdGHib4
-        </h2>
-        <video controls poster="images/landscape_placeholder.jpg" playsinline id="walkthrough-video">
-            <source src="videos/debrief-spinningshapes.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </section> -->
+    <section class="carousel-section">
+        <article class="main-carousel">
+            <!-- Flickity Options: https://flickity.metafizzy.co/options -->
+            <div class="carousel-cell"><img src="images/landscape_placeholder.jpg"
+                    alt="Overlooking New Chums Beach from Motutu Point - https://en.wikipedia.org/wiki/User:Pseudopanax">
+            </div>
+            <div class="carousel-cell"><img src="images/landscape_placeholder.jpg"
+                    alt="New Chums Beach at Whangapoua, Waikato, New Zealand - https://www.flickr.com/people/97251982@N00">
+            </div>
+            <div class="carousel-cell"><img src="images/landscape_placeholder.jpg"
+                    alt="Bream Bay, Ruakaka Beach - https://www.flickr.com/people/88123769@N02"></div>
 
-<section class="discipline-OP-video">
-    <h2>
-            Design your Future | Communication Design
-    </h2>
-    <div class="youtube-video">
-        <iframe
-            id="walkthrough-video"
-            src="https://www.youtube.com/embed/jjCxZdGHib4?si=5gXqy49PHF1BfMPu"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-        </iframe>
-    </div>
-</section>
+            <div class="carousel-cell"><img src="images/landscape_placeholder.jpg"
+                    alt="Totaranui Beach in Abel Tasman National Park - https://commons.wikimedia.org/wiki/User:Tournasol7">
+            </div>
+            <div class="carousel-cell"><img src="images/landscape_placeholder.jpg"
+                    alt="Waipatiki Beach (Hastings District, Hawke's Bay, New Zealand) from the south; picture taken by Wilma Verburg, 2007/12/11 - https://commons.wikimedia.org/wiki/User:WJV%26DB">
+            </div>
+        </article>
+        <p class="caption">&nbsp;</p>
+        <p> 
+            words here about the projects in general possibly? or would this be unnessary. It depends on what and how much content the ehads of school want fpr te comms pages and other disicplines. words here about the projects in general possibly? or would this be unnessary. It depends on what and how much content the ehads of school want fpr te comms pages and other disicplines.  words here about the projects in general possibly? or would this be unnessary. It depends on what and how much content the ehads of school want fpr te comms pages and other disicplines. 
+        </p>
+    </section>
 
 </main>
 
-         <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
           FOOTER
     
@@ -380,9 +346,10 @@
                 </article>
 
                 <article class="footer__menu">
-                    <h2>
-                        Events
-                    </h2>
+                    <button class="footer__dropdown" type="button">
+                        <h2>Events</h2>
+                        <span class="footer__arrow"></span>
+                    </button>
                     <ul class="footer__menu__list">
                         <li><a href="debrief.html">DEBRIEF: Graduate Exhibition</a></li>
                         <li><a href="collections.html">COLLECTIONS: Fashion Show</a></li>
@@ -397,9 +364,10 @@
                 </article>
 
                 <article class="footer__menu">
-                    <h2>
-                        Graduates
-                    </h2>
+                    <button class="footer__dropdown" type="button">
+                        <h2>Graduates</h2>
+                        <span class="footer__arrow"></span>
+                    </button>
                     <ul class="footer__menu__list">
                         <li><a href="students-communication.html">Communication Design</a></li>
                         <li><a href="students-fashion.html">Fashion Design</a></li>
@@ -409,9 +377,10 @@
                 </article>
 
                 <article class="footer__menu">
-                    <h2>
-                        Social links
-                    </h2>
+                    <button class="footer__dropdown" type="button">
+                        <h2>Social links</h2>
+                        <span class="footer__arrow"></span>
+                    </button>
                     <ul class="footer__menu__list">
                         <li><a href="https://www.op.ac.nz/schools/school-of-design" target="_blank"><i class="fa-solid fa-globe"></i> School of Design</a></li>
                         <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> School of Design</a></li>
@@ -439,3 +408,4 @@
 
         </footer>
 </body>
+</html>

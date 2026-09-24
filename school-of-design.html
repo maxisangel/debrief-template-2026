@@ -231,7 +231,7 @@
             toggle.addEventListener("click", function () {
 
                 var grid = toggle.parentElement.querySelector(
-                    ".discipline__grid__narrow"
+                    ".discipline__grid"
                 );
 
                 /* Toggle the arrow */
@@ -272,32 +272,32 @@
             </h1>
     </section>
 
-        <section class="coloured-block-section">
+    <section class="discipline-explore">
         <button class="standalone-h2 discipline-toggle" type="button">
            <h2> Explore the Disciplines </h2>
-            <span class="discipline-arrow">⌄</span>
+            <span class="discipline-arrow"></span>
         </button>
 
-        <article class="discipline__grid__narrow">
+        <article class="discipline__grid">
 
-            <a href="about-communication.html" class="discipline_narrow">
-                <img src="images/circle.png" alt="Communication Design" class="discipline__image_narrow">
-                <h2 class="discipline__name_narrow">Communication Design</h2>
+            <a href="about-communication.html" class="discipline">
+                <img src="images/circle.png" alt="Communication Design" class="discipline__image">
+                <h2 class="discipline__name">Communications</h2>
             </a>
 
-            <a href="about-fashion.html" class="discipline_narrow">
-                <img src="images/diamond.png" alt="Fashion Design" class="discipline__image_narrow">
-                <h2 class="discipline__name_narrow">Fashion Design</h2>
+            <a href="about-fashion.html" class="discipline">
+                <img src="images/diamond.png" alt="Fashion Design" class="discipline__image">
+                <h2 class="discipline__name">Fashion</h2>
             </a>
 
-            <a href="about-product.html" class="discipline_narrow">
-                <img src="images/triangle.png" alt="Product Design" class="discipline__image_narrow">
-                <h2 class="discipline__name_narrow">Product Design</h2>
+            <a href="about-product.html" class="discipline">
+                <img src="images/triangle.png" alt="Product Design" class="discipline__image">
+                <h2 class="discipline__name">Product</h2>
             </a>
 
-            <a href="about-postgraduate.html" class="discipline_narrow">
-                <img src="images/rectangle.png" alt="Postgraduate Design" class="discipline__image_narrow">
-                <h2 class="discipline__name_narrow">Postgraduate Design</h2>
+            <a href="about-postgraduate.html" class="discipline">
+                <img src="images/rectangle.png" alt="Postgraduate Design" class="discipline__image">
+                <h2 class="discipline__name">Postgraduate</h2>
             </a>
         </article>
     </section>
@@ -350,9 +350,10 @@
                 </article>
 
                 <article class="footer__menu">
-                    <h2>
-                        Events
-                    </h2>
+                    <button class="footer__dropdown" type="button">
+                        <h2>Events</h2>
+                        <span class="footer__arrow"></span>
+                    </button>
                     <ul class="footer__menu__list">
                         <li><a href="debrief.html">DEBRIEF: Graduate Exhibition</a></li>
                         <li><a href="collections.html">COLLECTIONS: Fashion Show</a></li>
@@ -367,9 +368,10 @@
                 </article>
 
                 <article class="footer__menu">
-                    <h2>
-                        Graduates
-                    </h2>
+                    <button class="footer__dropdown" type="button">
+                        <h2>Graduates</h2>
+                        <span class="footer__arrow"></span>
+                    </button>
                     <ul class="footer__menu__list">
                         <li><a href="students-communication.html">Communication Design</a></li>
                         <li><a href="students-fashion.html">Fashion Design</a></li>
@@ -379,9 +381,10 @@
                 </article>
 
                 <article class="footer__menu">
-                    <h2>
-                        Social links
-                    </h2>
+                    <button class="footer__dropdown" type="button">
+                        <h2>Social links</h2>
+                        <span class="footer__arrow"></span>
+                    </button>
                     <ul class="footer__menu__list">
                         <li><a href="https://www.op.ac.nz/schools/school-of-design" target="_blank"><i class="fa-solid fa-globe"></i> School of Design</a></li>
                         <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> School of Design</a></li>
@@ -409,3 +412,4 @@
 
         </footer>
 </body>
+</html>

@@ -193,37 +193,13 @@
     <main> <!-- Main content area is set to 100% width -->
 
 
-        <section class="project-info">
-            <div class="project-info__title">
-                <h2> Project Name </h2>
-                <h3> Student Name </h3>
-            </div>
-            <p> "For Tūhura Otago Museum Shop, I developed a collection of illustrated native New Zealand animals and natural elements designed for a range of merchandise. The illustrations were created with versatility in mind, allowing them to be applied across products such as pins, stickers, magnets, and other souvenirs. For children, I explored a playful and approachable style that encourages curiosity and introduces younger audiences to Aotearoa’s unique native wildlife and environments. Alongside this, I developed a more refined and mature illustrative style for tourists, creating memorable souvenirs that celebrate New Zealand’s natural identity while encouraging visitors to learn about and take a piece of Aotearoa home." </p>
-        </section>
-
-        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-          MASONRY LAYOUT FOR PORTFOLIO WORK - SUITABLE FOR A MIX OF PORTRAIT AND LANDSCAPE FORMAT IMAGES
-    
-        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-
-        <section class="grid--masonry">
-            <img src="images/landscape_placeholder.jpg">
-            <img src="images/portrait_placeholder.jpg">
-            <img src="images/square_placeholder.jpg">
-            <img src="images/landscape_placeholder.jpg">
-            <img src="images/square_placeholder.jpg">
-            <img src="images/landscape_placeholder.jpg">
-            <img src="images/square_placeholder.jpg">
-        </section>
-
         <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
           Student Info
     
         = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 
-        <section class="student-info">
+        <section class="student-info-sn">
             <article class="student-contact-info">
                 <img class="student-profile" src="images/square_placeholder.jpg" alt="Student Name Profile Image">
                 <ul class="student-contacts">
@@ -241,6 +217,37 @@
 
             <p class="student-quote"> “A large student quote before the project? Could be short or long. one or 3 lines of text possibly?” </p>
         </section>
+
+
+        <article class="portfolio-hero-image-sn">
+            <img src="images/landscape_placeholder.jpg">
+        </article>
+
+
+        <article class="project-info-sn">
+            <div class="project-info__title-sn">
+                <h2> Project Name </h2>
+                <h3> Student Name </h3>
+            </div>
+            <p> "For Tūhura Otago Museum Shop, I developed a collection of illustrated native New Zealand animals and natural elements designed for a range of merchandise. The illustrations were created with versatility in mind, allowing them to be applied across products such as pins, stickers, magnets, and other souvenirs. For children, I explored a playful and approachable style that encourages curiosity and introduces younger audiences to Aotearoa’s unique native wildlife and environments. Alongside this, I developed a more refined and mature illustrative style for tourists, creating memorable souvenirs that celebrate New Zealand’s natural identity while encouraging visitors to learn about and take a piece of Aotearoa home." </p>
+        </article>
+
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+          MASONRY LAYOUT FOR PORTFOLIO WORK - SUITABLE FOR A MIX OF PORTRAIT AND LANDSCAPE FORMAT IMAGES
+    
+        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+        <article class="grid--masonry-sn">
+            <img src="images/landscape_placeholder.jpg">
+            <img src="images/portrait_placeholder.jpg">
+            <img src="images/square_placeholder.jpg">
+            <img src="images/landscape_placeholder.jpg">
+            <img src="images/square_placeholder.jpg">
+            <img src="images/landscape_placeholder.jpg">
+            <img src="images/square_placeholder.jpg">
+        </article>
+
 
         <!-- /* LIGHTBOX HERE */ -->
 
@@ -416,9 +423,10 @@ document.addEventListener('keydown', (event) => {
                 </article>
 
                 <article class="footer__menu">
-                    <h2>
-                        Events
-                    </h2>
+                    <button class="footer__dropdown" type="button">
+                        <h2>Events</h2>
+                        <span class="footer__arrow"></span>
+                    </button>
                     <ul class="footer__menu__list">
                         <li><a href="debrief.html">DEBRIEF: Graduate Exhibition</a></li>
                         <li><a href="collections.html">COLLECTIONS: Fashion Show</a></li>
@@ -433,9 +441,10 @@ document.addEventListener('keydown', (event) => {
                 </article>
 
                 <article class="footer__menu">
-                    <h2>
-                        Graduates
-                    </h2>
+                    <button class="footer__dropdown" type="button">
+                        <h2>Graduates</h2>
+                        <span class="footer__arrow"></span>
+                    </button>
                     <ul class="footer__menu__list">
                         <li><a href="students-communication.html">Communication Design</a></li>
                         <li><a href="students-fashion.html">Fashion Design</a></li>
@@ -445,9 +454,10 @@ document.addEventListener('keydown', (event) => {
                 </article>
 
                 <article class="footer__menu">
-                    <h2>
-                        Social links
-                    </h2>
+                    <button class="footer__dropdown" type="button">
+                        <h2>Social links</h2>
+                        <span class="footer__arrow"></span>
+                    </button>
                     <ul class="footer__menu__list">
                         <li><a href="https://www.op.ac.nz/schools/school-of-design" target="_blank"><i class="fa-solid fa-globe"></i> School of Design</a></li>
                         <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> School of Design</a></li>
@@ -475,3 +485,4 @@ document.addEventListener('keydown', (event) => {
 
         </footer>
 </body>
+</html>

@@ -192,54 +192,43 @@
 
     <main> <!-- Main content area is set to 100% width -->
 
-
-
-
 <section class="project-content">
-
-    <!-- WRITTEN SECTION -->
-    <section class="project-info">
-        <div class="project-info__title">
-            <h2> Project Name </h2>
-            <h3> Student Name </h3>
-        </div>
-        <p> "For Tūhura Otago Museum Shop, I developed a collection of illustrated native New Zealand animals and natural elements designed for a range of merchandise. The illustrations were created with versatility in mind, allowing them to be applied across products such as pins, stickers, magnets, and other souvenirs. For children, I explored a playful and approachable style that encourages curiosity and introduces younger audiences to Aotearoa’s unique native wildlife and environments. Alongside this, I developed a more refined and mature illustrative style for tourists, creating memorable souvenirs that celebrate New Zealand’s natural identity while encouraging visitors to learn about and take a piece of Aotearoa home." </p>
-    </section>
+        <article class="project-info">
+            <div class="project-info__title">
+                <h2> Project Name </h2>
+                <h3> Student Name </h3>
+            </div>
+            <p> "For Tūhura Otago Museum Shop, I developed a collection of illustrated native New Zealand animals and natural elements designed for a range of merchandise. The illustrations were created with versatility in mind, allowing them to be applied across products such as pins, stickers, magnets, and other souvenirs. For children, I explored a playful and approachable style that encourages curiosity and introduces younger audiences to Aotearoa’s unique native wildlife and environments. Alongside this, I developed a more refined and mature illustrative style for tourists, creating memorable souvenirs that celebrate New Zealand’s natural identity while encouraging visitors to learn about and take a piece of Aotearoa home." </p>
+        </article>
 
 
-    <!-- FULL WIDTH IMAGE -->
-    <div class="image-full">
-        <img src="images/landscape_placeholder.jpg" alt="Project image">
-    </div>
 
+        <article class="portfolio-hero-image">
+            <img src="images/landscape_placeholder.jpg">
+        </article>
 
-    <!-- TWO HALF WIDTH IMAGES -->
-    <div class="image-half">
-        <img src="images/portrait_placeholder.jpg" alt="Project image">
-        <img src="images/portrait_placeholder.jpg" alt="Project image">
-    </div>
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+          MASONRY LAYOUT FOR PORTFOLIO WORK - SUITABLE FOR A MIX OF PORTRAIT AND LANDSCAPE FORMAT IMAGES
+    
+        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 
-    <!-- FULL WIDTH IMAGE -->
-    <div class="image-full">
-        <img src="images/landscape_placeholder.jpg" alt="Project image">
-    </div>
-
-
-    <!-- FULL WIDTH IMAGE -->
-    <div class="image-full">
-        <img src="images/landscape_placeholder.jpg" alt="Project image">
-    </div>
-
-
-    <!-- TWO HALF WIDTH IMAGES -->
-    <div class="image-half">
-        <img src="images/square_placeholder.jpg" alt="Project image">
-        <img src="images/square_placeholder.jpg" alt="Project image">
-    </div>
-
+        <article class="grid--masonry">
+            <img src="images/landscape_placeholder.jpg">
+            <img src="images/portrait_placeholder.jpg">
+            <img src="images/square_placeholder.jpg">
+            <img src="images/landscape_placeholder.jpg">
+            <img src="images/square_placeholder.jpg">
+            <img src="images/landscape_placeholder.jpg">
+            <img src="images/square_placeholder.jpg">
+        </article>
 </section>
 
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+          Student Info
+    
+        = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 
         <section class="student-info">
             <article class="student-contact-info">
@@ -260,8 +249,7 @@
             <p class="student-quote"> “A large student quote before the project? Could be short or long. one or 3 lines of text possibly?” </p>
         </section>
 
-
-        <!-- LIGHTBOX -->
+        <!-- /* LIGHTBOX HERE */ -->
 
     <div class="lightbox" id="lightbox">
 
@@ -281,163 +269,145 @@
 
     </div>
 
-
     </main> 
-
-    
-          <!-- /* LIGHTBOX HERE */ -->
-
-    <script>
-        const images = document.querySelectorAll(
-            '.image-full img, .image-half img'
-        );
-
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightbox-image');
-
-        const closeButton = document.querySelector('.lightbox-close');
-        const previousButton = document.querySelector('.lightbox-prev');
-        const nextButton = document.querySelector('.lightbox-next');
-
-        let currentImage = 0;
-
-
-        /* OPEN IMAGE */
-
-        images.forEach((image, index) => {
-
-            image.addEventListener('click', () => {
-
-                currentImage = index;
-
-                showImage();
-
-                lightbox.classList.add('active');
-
-                document.body.style.overflow = 'hidden';
-
-            });
-
-        });
-
-
-        /* SHOW CURRENT IMAGE */
-
-        function showImage() {
-
-            lightboxImage.src = images[currentImage].src;
-            lightboxImage.alt = images[currentImage].alt;
-
-        }
-
-
-        /* NEXT IMAGE */
-
-        function nextImage() {
-
-            currentImage++;
-
-            if (currentImage >= images.length) {
-                currentImage = 0;
-            }
-
-            showImage();
-
-        }
-
-
-        /* PREVIOUS IMAGE */
-
-        function previousImage() {
-
-            currentImage--;
-
-            if (currentImage < 0) {
-                currentImage = images.length - 1;
-            }
-
-            showImage();
-
-        }
-
-
-        /* BUTTONS */
-
-        nextButton.addEventListener('click', (event) => {
-
-            event.stopPropagation();
-
-            nextImage();
-
-        });
-
-
-        previousButton.addEventListener('click', (event) => {
-
-            event.stopPropagation();
-
-            previousImage();
-
-        });
-
-
-        /* CLOSE BUTTON */
-
-        closeButton.addEventListener('click', (event) => {
-
-            event.stopPropagation();
-
-            closeLightbox();
-
-        });
-
-
-        /* CLICK BACKGROUND TO CLOSE */
-
-        lightbox.addEventListener('click', (event) => {
-
-            if (event.target === lightbox) {
-                closeLightbox();
-            }
-
-        });
-
-
-        /* KEYBOARD CONTROLS */
-
-        document.addEventListener('keydown', (event) => {
-
-            if (!lightbox.classList.contains('active')) {
-                return;
-            }
-
-            if (event.key === 'ArrowRight') {
-                nextImage();
-            }
-
-            if (event.key === 'ArrowLeft') {
-                previousImage();
-            }
-
-            if (event.key === 'Escape') {
-                closeLightbox();
-            }
-
-        });
-
-
-        /* CLOSE */
-
-        function closeLightbox() {
-
-            lightbox.classList.remove('active');
-
-            document.body.style.overflow = '';
-
-        }
-    </script>
     
     <!-- End of main content area -->
+
+              <!-- /* LIGHTBOX HERE */ -->
+
+<script>
+
+const galleryImages = document.querySelectorAll('.grid--masonry img');
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+
+const closeButton = document.querySelector('.lightbox-close');
+const previousButton = document.querySelector('.lightbox-prev');
+const nextButton = document.querySelector('.lightbox-next');
+
+let currentImage = 0;
+
+
+/* OPEN IMAGE */
+
+galleryImages.forEach((image, index) => {
+
+    image.addEventListener('click', () => {
+
+        currentImage = index;
+
+        showImage();
+
+        lightbox.classList.add('active');
+
+        document.body.style.overflow = 'hidden';
+
+    });
+
+});
+
+
+/* SHOW IMAGE */
+
+function showImage() {
+
+    lightboxImage.src = galleryImages[currentImage].src;
+    lightboxImage.alt = galleryImages[currentImage].alt;
+
+}
+
+
+/* NEXT IMAGE */
+
+nextButton.addEventListener('click', () => {
+
+    currentImage++;
+
+    if (currentImage >= galleryImages.length) {
+        currentImage = 0;
+    }
+
+    showImage();
+
+});
+
+
+/* PREVIOUS IMAGE */
+
+previousButton.addEventListener('click', () => {
+
+    currentImage--;
+
+    if (currentImage < 0) {
+        currentImage = galleryImages.length - 1;
+    }
+
+    showImage();
+
+});
+
+
+/* CLOSE */
+
+closeButton.addEventListener('click', closeLightbox);
+
+
+function closeLightbox() {
+
+    lightbox.classList.remove('active');
+
+    document.body.style.overflow = '';
+
+}
+
+
+/* CLICK OUTSIDE IMAGE TO CLOSE */
+
+lightbox.addEventListener('click', (event) => {
+
+    if (event.target === lightbox) {
+        closeLightbox();
+    }
+
+});
+
+
+/* KEYBOARD CONTROLS */
+
+document.addEventListener('keydown', (event) => {
+
+    if (!lightbox.classList.contains('active')) {
+        return;
+    }
+
+    if (event.key === 'ArrowRight') {
+        currentImage++;
+
+        if (currentImage >= galleryImages.length) {
+            currentImage = 0;
+        }
+
+        showImage();
+    }
+
+    if (event.key === 'ArrowLeft') {
+        currentImage--;
+
+        if (currentImage < 0) {
+            currentImage = galleryImages.length - 1;
+        }
+
+        showImage();
+    }
+
+    if (event.key === 'Escape') {
+        closeLightbox();
+    }
+
+});
+
+</script>
 
         <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
